@@ -13,14 +13,17 @@ eureka:
       waitTimeInMsWhenSyncEmpty: 0
 
 zuul:
-  #Service will be mapped under the /api URI
   prefix: /api
   routes:
     legacy_api:
       path: /legacy_api/**
       sensitiveHeaders:
-      url: http://localhost:80
+      url: http://192.168.32.48:80
 
     task-service:
       path: /task-service/**
-      url: http://localhost:8503
+      url: http://192.168.32.48:8503
+
+    wiki-service:
+      path: /wiki-service/**
+      url: http://192.168.32.38:8500
